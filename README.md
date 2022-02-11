@@ -59,7 +59,9 @@ password:<your_password>
 grant_type:password
 ```
 
-
-
-
->
+> 이슈발생. spring-boot 2.6.1  
+> 오류내용 : The dependencies of some of the beans in the application context form a cycle  
+> 해결:  
+> SecurityConfig 에서 KeycloakSpringBootConfigResolver KeycloakConfigResolver 주석걸고  
+> KeycloakConfiguration 추가함   
+> 참조: https://stackoverflow.com/questions/70207564/spring-boot-2-6-regression-how-can-i-fix-keycloak-circular-dependency-in-adapte
